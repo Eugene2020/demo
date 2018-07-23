@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание, часть 2</title>
+    <script>
+        var names = [
+            "RandomField0",
+            "RandomField1",
+            "RandomField2",
+            "RandomField3",
+            "RandomField4",
+            "RandomField5",
+            "RandomField6",
+            "RandomField7",
+            "RandomField8",
+            "RandomField9",
+            "RandomField10",
+            "RandomField11",
+            "RandomField12",
+            "RandomField13",
+            "RandomField14",
+        ];
+        function getRandomNum(min, max)
+        {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        };
+        function generateArray(k = 10000) {
+            let resultArr = [];
+            for (let i = 0; i < k; i++) {
+                let randomNum = getRandomNum(0,names.length-1);
+                let randomName = names[randomNum];
+                resultArr[i] = {[randomName]: "string"+i}
+            }
+            return resultArr;
+        };
+        function filterArrays(filterField,filterString,...rest) {
+            if (typeof(filterString) != "string") {
+                return "First argument must be a string";
+            }
+            if (typeof(filterField) != "string") {
+                return "Second argument must be a string";
+            }
+            var allObjects = [];
+            for (let i = 0; i < rest.length; i++) {
+                for (let j = 0; j < rest[i].length; j++) {
+                    allObjects.push(rest[i][j]);
+                }
+            }
+            
+        }
+    </script>
+  </head>
+  <body>
+    Проверить в консоли: generateArray(k) - создать массив по условиям задания 2.1
+  </body>
+</html>
